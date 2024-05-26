@@ -1,0 +1,37 @@
+<div class="modal-container">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Transport Segments</h2>
+      <button class="close-button" (click)="closeModal()">Close</button>
+    </div>
+    <div class="modal-body">
+       @if((dataWithSemgentTransport$ | async)?.length === 0;){
+        <h2>Data loading</h2>
+      } @else { 
+      @for(segment of  dataWithSemgentTransport$.getValue(); track segment){
+
+      <div class="segment-info">
+        <div class="segment-row">
+          <span class="label">Arrival:</span>
+          <span class="value">{{ segment.arrival }}</span>
+        </div>
+        <div class="segment-row">
+          <span class="label">Departure:</span>
+          <span class="value">{{ segment.departure }}</span>
+        </div>
+        <div class="segment-row">
+          <span class="label">From:</span>
+          <span class="value">{{ segment.from.title }}</span>
+        </div>
+        <div class="segment-row">
+          <span class="label">To:</span>
+          <span class="value">{{ segment.to.title }}</span>
+        </div>
+      </div>
+      }
+    }
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

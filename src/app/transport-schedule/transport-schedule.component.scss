@@ -1,0 +1,147 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.booking-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  color: #343a40;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  outline: none;
+}
+
+.date-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.date-button:hover {
+  background-color: #0056b3;
+}
+
+.transport-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  font-size: 30px;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: #0056b3;
+}
+
+.find-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.find-button:hover {
+  background-color: #218838;
+}
+
+.transport-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff; /* Белый фон */
+}
+
+.transport-icons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #555;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.transport-icons button:hover {
+  background-color: #d4d4d4;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.transport-icons button.active {
+  background-color: #bda1e2; /* Ярко-розовый цвет */
+  color: white;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.transport-icons .find-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #3f51b5; /* Синий цвет */
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transport-icons .find-button:hover {
+  background-color: #303f9f; /* Темно-синий цвет при наведении */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.transport-icons mat-icon.icon {
+  font-size: 24px;
+}
+
+.transport-icons button span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.find-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

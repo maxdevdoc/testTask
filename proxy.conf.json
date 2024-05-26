@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://suggests.rasp.yandex.net",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

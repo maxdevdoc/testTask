@@ -1,0 +1,27 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# logs
+/logs
+*.log
+
+# local files
+/.idea
+/.vscode
+/.vs
+*.swp
+*.swo
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.*.local
+!.env.example
