@@ -59,6 +59,15 @@ const appReducer = createReducer(
     stateModalWindowTransport: false
   })),
 
+  on(closeModalWindowTranspor, (state) => ({
+    ...state, 
+    responseTransportState: {
+      ...state.responseTransportState,
+      segments: [null] as [null],
+    },
+
+  })),
+
 );
 
 export function reducer(state: appStore | undefined, action: Action) {

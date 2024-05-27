@@ -19,6 +19,10 @@ export const openModalWindowTranspor = createAction(
 export const closeModalWindowTranspor = createAction(
   '[Schedule page] close modal window transport'
 )
+
+export const clearModalWindowTransport = createAction(
+  '[Shedule page] clear modal woindow transport'
+)
 ///////////////////////////////////////////////
 export const setFromForScheduleAction = createAction(
   "[Schedule page] Address from where is set",

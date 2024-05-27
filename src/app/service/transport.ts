@@ -32,17 +32,16 @@ export class ScheduleService {
     console.log('work service get schedule')
     return combineLatest([this.fromCode$, this.toCode$, this.transport$, this.date$]).pipe( 
       tap(response => {
-        // Log the full response to the console
         console.log('Response:', JSON.stringify(response));
       }),
       map(([fromCode, toCode, transport, date]) => { 
         if (fromCode && toCode && date) { 
-          const apiUrl = `https://api.rasp.yandex.net/v3.0/search/?apikey=${this.apiKey}&format=json&from=${fromCode}&transport_types=${transport}&to=${toCode}&lang=ru_RU&page=1&date=${date}`; 
+          // const apiUrl = `https://api.rasp.yandex.net/v3.0/search/?apikey=${this.apiKey}&format=json&from=${fromCode}&transport_types=${transport}&to=${toCode}&lang=ru_RU&page=1&date=${date}`; 
+          const apiUrl = `/api2/v3.0/search/?apikey=${this.apiKey}&format=json&from=${fromCode}&transport_types=${transport}&to=${toCode}&lang=ru_RU&page=1&date=${date}`; 
           return this.http.get<any>(apiUrl).pipe( 
             map((response) => response) 
           ); 
         } else { 
-          // Handle case where any of the required parameters are not available 
           return new Observable(observer => { 
             observer.next(null); 
             observer.complete(); 
@@ -50,7 +49,6 @@ export class ScheduleService {
         } 
       }) 
     ).pipe( 
-      // Ensure we don't nest observables 
       switchMap(scheduleObservable => scheduleObservable) 
     ); 
   } 

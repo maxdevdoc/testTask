@@ -33,8 +33,7 @@ export const selectWindowTransport = createSelector(
 
 export const selectSegment = createSelector(
   selectFeature, 
-  (state: appStore) => state.responseTransportState.data.segments
-);
+  (state: appStore) => state.responseTransportState);
 
 export const selectDataForApiSchedule = createSelector( 
   selectFeature, 

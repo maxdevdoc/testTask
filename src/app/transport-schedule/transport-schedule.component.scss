@@ -65,21 +65,6 @@
   color: #0056b3;
 }
 
-.find-button {
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.find-button:hover {
-  background-color: #218838;
-}
-
 .transport-icons {
   display: flex;
   gap: 10px;
@@ -116,22 +101,6 @@
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.transport-icons .find-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 30px;
-  background-color: #3f51b5; /* Синий цвет */
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.transport-icons .find-button:hover {
-  background-color: #303f9f; /* Темно-синий цвет при наведении */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
 .transport-icons mat-icon.icon {
   font-size: 24px;
 }
@@ -141,7 +110,13 @@
   font-weight: bold;
 }
 
-.find-button:disabled {
-  background-color: #ccc;
+.find-button{
+  background-color: #45a84a !important;
+  transition: background-color 0.3s ease;
+}
+
+.disabled-button {
+  background-color: #cfc0c033;
   cursor: not-allowed;
+  transition: background-color 0.3s ease;
 }

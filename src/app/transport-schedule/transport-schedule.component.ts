@@ -7,6 +7,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { AsyncPipe, NgFor } from "@angular/common";
 import { HeaderComponent } from "../shared/header/header.component";
 import { Store } from "@ngrx/store";
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import {
   setFromForScheduleAction,
@@ -46,7 +47,8 @@ export class TransportScheduleComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private formBuilder: FormBuilder,
-    private store: Store
+    private store: Store,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -62,9 +64,20 @@ export class TransportScheduleComponent implements OnInit {
     });
   }
 
-  setToday() {}
+  setTomorrow() {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    this.bookingForm.get('date')?.setValue(tomorrow.toISOString().split('T')[0]);
+  }
 
-  setTomorrow() {}
+  
+  setDayAfterTomorrow() {
+    const today = new Date();
+    const dayAfterTomorrow = new Date(today);
+    dayAfterTomorrow.setDate(today.getDate() + 2);
+    this.bookingForm.get('date')?.setValue(dayAfterTomorrow.toISOString().split('T')[0]);
+  }
 
   setTransport(type: string) {
     this.activeButton = type;
@@ -112,6 +125,14 @@ export class TransportScheduleComponent implements OnInit {
   }
   setTrasportAny() {
     this.setTransport("");
+  }
+
+  alertNotValidForm() {
+    this.snackBar.open('Форма недействительна', 'Закрыть', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    });
   }
 
   onSearch(): void {

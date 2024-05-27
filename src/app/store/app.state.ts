@@ -21,14 +21,13 @@ export const initialBookingState: appStore = {
   toCode: '',
   stateModalWindowTransport: false, 
   responseTransportState: {
-    data: {
       pagination: {
         total: 0,
         limit: 0,
         offset: 0,
       },
       interval_segments: [],
-      segments: [],
+      segments: [null],
       search: {
         date: '',
         to: {
@@ -53,5 +52,4 @@ export const initialBookingState: appStore = {
         },
       },
     },
-  }
 };

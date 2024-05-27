@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {navigateToMapAction, navigateToPolygonPageAction, navigateToMainPageAction} from '../../store/app.action';
 
-const API = '4d177e45-c393-407a-a87c-14121328cdcf'
 
 @Component({
   selector: 'app-header',

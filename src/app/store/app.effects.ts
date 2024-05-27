@@ -11,24 +11,22 @@ import {
   getIataToAction,
   getIataToSuccessfullAction,
   getIataToErrorAction,
-  getScheduleAction,
   scheduleSuccessfullyAction,
   scheduleErrorAction,
 } from "./app.action";
-import { filter, switchMap, take, tap, withLatestFrom } from "rxjs/operators";
+import { take, tap } from "rxjs/operators";
 import { IataService } from "../service/get-IATA";
 import { ScheduleService } from "../service/transport";
 import { mergeMap, map, catchError } from "rxjs/operators";
-import { EMPTY, of } from "rxjs";
+import { of } from "rxjs";
 import { Store } from "@ngrx/store";
-import { selectTo } from "./app.selector";
+
 
 @Injectable()
 export class AppEffects {
   constructor(
     private actions$: Actions,
     private router: Router,
-    private store: Store,
     private iataService: IataService,
     private scheduleService: ScheduleService
   ) {}

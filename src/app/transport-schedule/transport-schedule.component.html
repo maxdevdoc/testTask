@@ -36,7 +36,7 @@
     </div>
     <div class="form-group">
       <button class="date-button" (click)="setTomorrow()">Завтра</button>
-      <button class="date-button" (click)="setTomorrow()">После завтра</button>
+      <button class="date-button" (click)="setDayAfterTomorrow()">После завтра</button>
     </div>
     <div class="transport-icons">
       <button
@@ -69,7 +69,13 @@
       >
         Любой
       </button>
-      <button class="find-button" (click)="apply()" [disabled]="!bookingForm.valid">Найти</button>
+      @if(!bookingForm.valid){
+        <button class="disabled-button" (click)="alertNotValidForm()">Найти</button>
+      } @else {
+        <button class="find-button" (click)="apply()" [disabled]="!bookingForm.valid">Найти</button>
+      }
+
+      
     </div>
   </div>
 </div>

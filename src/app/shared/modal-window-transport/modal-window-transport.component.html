@@ -5,31 +5,43 @@
       <button class="close-button" (click)="closeModal()">Close</button>
     </div>
     <div class="modal-body">
-       @if((dataWithSemgentTransport$ | async)?.length === 0;){
-        <h2>Data loading</h2>
-      } @else { 
-      @for(segment of  dataWithSemgentTransport$.getValue(); track segment){
 
-      <div class="segment-info">
-        <div class="segment-row">
-          <span class="label">Arrival:</span>
-          <span class="value">{{ segment.arrival }}</span>
-        </div>
-        <div class="segment-row">
-          <span class="label">Departure:</span>
-          <span class="value">{{ segment.departure }}</span>
-        </div>
-        <div class="segment-row">
-          <span class="label">From:</span>
-          <span class="value">{{ segment.from.title }}</span>
-        </div>
-        <div class="segment-row">
-          <span class="label">To:</span>
-          <span class="value">{{ segment.to.title }}</span>
-        </div>
+      @if((dataWithSemgentTransport$$ | async)?.[0] == null &&
+      !(nothingFound(dataWithSemgentTransport$$ | async))){
+      <div class="loader-container">
+        <div class="loader"></div>
       </div>
       }
-    }
+
+      @if(isValidDataResponse(dataWithSemgentTransport$$ | async)){
+      <div class="content-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Отправление</th>
+              <th>Прибытие</th>
+              <th>Место отправления</th>
+              <th>Место прибытия</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(segment of dataWithSemgentTransport$$.getValue(); track
+            segment){
+            <tr>
+              <td>{{ segment.departure | date : "yyyy-MM-dd H:mm" }}</td>
+              <td>{{ segment.arrival | date : "yyyy-MM-dd H:mm" }}</td>
+              <td>{{ segment.from.title }}</td>
+              <td>{{ segment.to.title }}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      }
+      @if(nothingFound(dataWithSemgentTransport$$ | async)){
+      <h2>Ничего не найдено</h2>
+      }
+
     </div>
   </div>
 </div>
