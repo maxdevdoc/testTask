@@ -11,14 +11,7 @@ import {
   OverlayModule,
   PortalModule,
   TemplatePortal
-} from "./chunk-SATZIGRK.js";
-import {
-  BreakpointObserver,
-  Breakpoints,
-  LiveAnnouncer,
-  MatCommonModule,
-  Platform
-} from "./chunk-XDRC3LR4.js";
+} from "./chunk-6H4FBFIK.js";
 import {
   animate,
   state,
@@ -26,6 +19,13 @@ import {
   transition,
   trigger
 } from "./chunk-3ZA5Q5VQ.js";
+import {
+  BreakpointObserver,
+  Breakpoints,
+  LiveAnnouncer,
+  MatCommonModule,
+  Platform
+} from "./chunk-XDRC3LR4.js";
 import {
   DOCUMENT
 } from "./chunk-XKGDFROO.js";
@@ -77,8 +77,8 @@ import {
   ɵɵtextInterpolate1,
   ɵɵviewQuery
 } from "./chunk-6PHSVXIZ.js";
-import "./chunk-SAVXX6OM.js";
 import "./chunk-SG3BCSKH.js";
+import "./chunk-SAVXX6OM.js";
 import {
   Subject,
   takeUntil
