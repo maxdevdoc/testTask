@@ -44,8 +44,8 @@ const appReducer = createReducer(
     date: date,
   })),
 
-  on(scheduleSuccessfullyAction, (state, { response }) => ({
-    ...state,
+  on(scheduleSuccessfullyAction, (initialBookingState, { response }) => ({
+    ...initialBookingState,
     responseTransportState: response,
   })),
 

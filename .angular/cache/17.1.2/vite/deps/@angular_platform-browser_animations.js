@@ -31,8 +31,8 @@ import {
   ɵɵdefineNgModule,
   ɵɵinject
 } from "./chunk-6PHSVXIZ.js";
-import "./chunk-SG3BCSKH.js";
 import "./chunk-SAVXX6OM.js";
+import "./chunk-SG3BCSKH.js";
 import "./chunk-PQ7O3X3G.js";
 import "./chunk-WKYGNSYM.js";
 

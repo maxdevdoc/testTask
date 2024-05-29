@@ -1,7 +1,7 @@
 <div class="modal-container">
   <div class="modal-content">
     <div class="modal-header">
-      <h2>Transport Segments</h2>
+      <h2>Расписание рейсов между станциями</h2>
       <button class="close-button" (click)="closeModal()">Close</button>
     </div>
     <div class="modal-body">
@@ -20,18 +20,30 @@
             <tr>
               <th>Отправление</th>
               <th>Прибытие</th>
-              <th>Место отправления</th>
-              <th>Место прибытия</th>
+              <th>Откуда</th>
+              <th>Куда</th>
+              <th>Платформа отправления</th>
+              <th>Платформа прибытия</th>
+              <th>Начальная дата</th>
+              <th>Наличие пересадок</th>
+              <th>Возможности купить электронный билет</th>
+              <th>Продолжительность</th>
             </tr>
           </thead>
           <tbody>
             @for(segment of dataWithSemgentTransport$$.getValue(); track
             segment){
             <tr>
-              <td>{{ segment.departure | date : "yyyy-MM-dd H:mm" }}</td>
-              <td>{{ segment.arrival | date : "yyyy-MM-dd H:mm" }}</td>
-              <td>{{ segment.from.title }}</td>
-              <td>{{ segment.to.title }}</td>
+              <td>{{ segment.departure | date : 'yyyy-MM-dd H:mm' }}</td>
+              <td>{{ segment.arrival | date : 'yyyy-MM-dd H:mm' }}</td>
+              <td title="{{ segment.from.title }}">{{ segment.from.title }}</td>
+              <td title="{{ segment.to.title }}">{{ segment.to.title }}</td>
+              <td title="{{ segment.departure_platform }}">{{ segment.departure_platform }}</td>
+              <td title="{{ segment.arrival_platform }}">{{ segment.arrival_platform }}</td>
+              <td>{{ segment.start_date }}</td>
+              <td>{{ segment.has_transfers ? 'Есть пересадки' : 'Нет пересадок' }}</td>
+              <td>{{ segment.tickets_info?.et_marker ? 'Да' : 'Нет' }}</td>
+              <td>{{ segment.duration }} мин</td>
             </tr>
             }
           </tbody>

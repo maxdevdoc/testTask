@@ -1,54 +1,57 @@
-.side-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 25%;
-  height: 100vh;
-  background-color: #f0f0f0; /* Цвет фона */
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Тень */
-  z-index: 999; /* Чтобы панель была поверх карты */
-}
-
-.controls {
-  padding: 20px;
-}
-
-.controls-panel {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
-}
-
-.button {
-  margin: 20px;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #acc8e6;
-}
-
-.button:focus {
-  outline: none;
-}
-
-input {
-  margin: 20px;
-}
-
-#map {
+.map-container {
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 88vh;
 }
 
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+
+.mapboxgl-ctrl-top-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff !important; 
+  border: 1px solid #ccc !important; 
+  border-radius: 4px !important; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; 
+  padding: 10px; 
+}
+
+.mapboxgl-ctrl-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+}
+
+.mapboxgl-ctrl-group .mapbox-gl-draw_ctrl-draw-btn, 
+.mapboxgl-ctrl-group .mapbox-gl-draw_ctrl-action-btn {
+  background-color: #007bff !important; 
+  color: #ffffff !important; 
+  border: none !important; 
+  border-radius: 4px !important; 
+  padding: 8px !important; 
+  margin: 4px !important; 
+}
+
+.mapboxgl-ctrl-group .mapbox-gl-draw_ctrl-draw-btn:hover, 
+.mapboxgl-ctrl-group .mapbox-gl-draw_ctrl-action-btn:hover {
+  background-color: #0056b3 !important; 
+}
+
+/* Стили для кнопки удаления */
+.mapboxgl-ctrl-group .mapbox-gl-draw_ctrl-draw-btn.mapbox-gl-draw_trash {
+  background-color: #dc3545 !important; 
+}
+
+.mapboxgl-ctrl-group .mapbox-gl-draw_ctrl-draw-btn.mapbox-gl-draw_trash:hover {
+  background-color: #c82333 !important; 
+}
+
+.mapboxgl-ctrl {
+  display: none;
+}

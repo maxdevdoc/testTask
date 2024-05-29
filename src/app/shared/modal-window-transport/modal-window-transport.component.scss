@@ -15,9 +15,46 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 90%; /* Ограничение ширины модального окна */
-    max-height: 90%; /* Ограничение высоты модального окна */
-    overflow: auto; /* Включение прокрутки при необходимости */
+    max-width: 90%;     th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    /* Стили для строк */
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    /* Дополнительные стили для ячеек */
+    td {
+      max-width: 150px; /* Ограничиваем ширину ячеек */
+      white-space: nowrap; /* Предотвращаем перенос текста */
+      overflow: hidden;
+      text-overflow: ellipsis; /* Добавляем многоточие в конце, если текст не помещается */
+    }
+
+    /* Стили для заголовков столбцов */
+    th:first-child, td:first-child {
+      border-left: 1px solid #ddd;
+    }
+
+    th:last-child, td:last-child {
+      border-right: 1px solid #ddd;
+    }
+    max-height: 90%; 
+    min-width: 90%;
+    min-height: 90%;
+    overflow: auto; 
   }
   
   .modal-header {
@@ -84,22 +121,47 @@
   }
   
   .modal-content {
-    width: 80%; /* или другое значение по вашему выбору */
+    width: 80%; 
   }
   
   .content-container {
     width: 100%;
-    overflow-x: auto; /* добавляем горизонтальную прокрутку, если содержимое не помещается */
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
+    overflow-x: auto; 
   }
   
   th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
   }
-  
+
+  th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  /* Стили для строк */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  /* Дополнительные стили для ячеек */
+  td {
+    max-width: 150px; /* Ограничиваем ширину ячеек */
+    white-space: nowrap; /* Предотвращаем перенос текста */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляем многоточие в конце, если текст не помещается */
+  }
+
+  /* Стили для заголовков столбцов */
+  th:first-child, td:first-child {
+    border-left: 1px solid #ddd;
+  }
+
+  th:last-child, td:last-child {
+    border-right: 1px solid #ddd;
+  }

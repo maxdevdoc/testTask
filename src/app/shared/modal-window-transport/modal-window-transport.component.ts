@@ -36,7 +36,7 @@ export class ModalWindowTransportComponent implements OnInit {
   }
 
   nothingFound(data:Segment[]){
-    return data === null || data.length === 0;
+    return (data === null) || (data.length === 0);
   }
 
   closeModal() {
