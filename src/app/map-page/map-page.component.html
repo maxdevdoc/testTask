@@ -2,3 +2,16 @@
 <div class="map-container">
   <div id="map" class="map"></div>
 </div>
+
+<div>
+  <input
+    type="range" 
+    id="polygonHeight" 
+    min="0" 
+    max="100" 
+    step="10"
+    [(ngModel)]="this.heightPolygon"
+    (ngModelChange)="updateHeight()"
+    />
+  <label for="polygonHeight">Polygon Height: {{this.heightPolygon}}</label>
+</div>
